@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --bg: #dcdde1;     
+    --color-icon: #535c68;  
+    --social-icon1: #0077B5;  
+  }
+  
+  body, html{
+    background: linear-gradient(290deg,#4f526d,#e66465, #9198e5,#e66465 ); background-size: 400%;
+    animation: bganimation 13s infinite;
+    overflow: hidden;
+  }
+  @keyframes bganimation {
+    0%{
+      background-position: 0% 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* icon linkdin */
+  .icon-item {
+    list-style: none
+  }
+  
+  .icon-link {  
+    display: inline-flex;
+    font-size: 1.6rem;  
+    text-decoration: none;  
+    color: var(--color-icon);
+    width: 6rem;
+    height: 6rem;   
+    transition: .5s linear;
+    position: relative;
+    z-index: 1;
+    margin: auto
+  }
+  
+  .icon-link:hover {
+    color: #fff !important;
+  }
+  
+  .icon-link i {
+    margin: auto;    
+  }
+  
+  .icon-link::before {  
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 6rem;
+    height: 6rem;
+    background: #0077B5;
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0);
+    transition: 0.3s cubic-bezier(.95, .32, .37, 1.21);
+  }
+    
+  .icon-link:hover::before {  
+    transform: scale(0.5);
+  }
+  

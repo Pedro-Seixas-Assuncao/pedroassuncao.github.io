@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
     --bg: #dcdde1;     
-    --color-icon: #535c68;  
+    --color-icon: #696c70;  
     --social-icon1: #0077B5;  
   }
   
@@ -29,34 +29,20 @@
     p{
       font-size: 12px;
     }
+    .btna{
+      font-size: 1rem !important;
+    }
+    .svg{
+      height: 1rem !important;
+    }
+    .card{
+      height: 67vh !important;
+    }
   }
   
-  .shine {
-    margin: 0%;
-    height: 20px;
-    background-image: radial-gradient(
-      farthest-side at 50% -50%,
-      hsl(0, 0%, 0%),
-      hsla(0, 0%, 0%, 0));
-    position: relative; 
-  }
-  
-  .shine::before {
-    height: 1px;
-    position: absolute;
-    top: -1px;
-    left: 0;
-    right: 0;
-    background-image: linear-gradient(
-      90deg,
-      hsla(0, 0%, 0%, 0),
-      hsla(0, 0%, 0%, 0.75) 50%,
-      hsla(0, 0%, 0%, 0));
-  }
   
   * {
     box-sizing: border-box;
-    line-height: 1.5;
     font-family: 'Courier New', monospace;
   }
   img {
@@ -66,7 +52,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 97.8vh;
   
   }
   p {
@@ -84,8 +70,13 @@
     box-shadow: 8px 9px 4px #000000cf;
     overflow: hidden;
     display: inline-table;
-  
+    
   }
+
+  .card::before{
+    height: 70vh;
+  }
+
   .card__image-container {
     margin: -2rem -2rem 1rem -2rem;
   }
@@ -95,7 +86,7 @@
   }
   .card__image {
     opacity: 0;
-    animation: ImageFadeIn 2s 1.2s forwards;
+    animation: ImageFadeIn 2s 0.3s forwards;
     background: rgba(255, 255, 255, 0)
           linear-gradient(
               to bottom,
@@ -112,14 +103,14 @@
   .card__content {
   
     opacity: 0;
-    animation: ContentFadeIn 0.8s 1.4s forwards;
+    animation: ContentFadeIn 0.8s 0.6s forwards;
   }
   .card_footer {
     display: flex;
     justify-content: center;
     margin-bottom: -2rem;
   }
-  .card__svg {
+  .card__.svg {
     position: absolute;
     left: 0;
     top: 10%;
@@ -198,6 +189,11 @@
     z-index: -1;
     transition: transform .5s ease;
   }
+  .icon-link:hover {
+  
+    
+  
+  }
   
   .btna {
     color: white;
@@ -218,28 +214,31 @@
     list-style: none
   }
   
-  .icon-link {  
+  .svg {  
     display: inline-flex;
     font-size: 1.6rem;  
     text-decoration: none;  
-    color: var(--color-icon);
-    width: 6rem;
-    height: 6rem;   
-    transition: .5s linear;
+    fill: var(--color-icon);
+    height: 2rem;   
+    transition: .3s linear;
     position: relative;
     z-index: 1;
     margin: auto
   }
   
-  .icon-link:hover {
+  .svg:hover {
+    fill: #fff;
+  }
+  
+  .icon-item:hover {
     color: #fff;
   }
   
-  .icon-link i {
+  .svg i {
     margin: auto;    
   }
   
-  .icon-link::before {  
+  .svg::before {  
     content: '';
     position: absolute;
     top: 0;
@@ -255,7 +254,8 @@
     transition: 0.3s cubic-bezier(.95, .32, .37, 1.21);
   }
     
-  .icon-link:hover::before {  
+  .svg:hover::before {  
     transform: scale(0.5);
   }
+  
   

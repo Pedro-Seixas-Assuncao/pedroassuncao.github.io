@@ -23,6 +23,38 @@
     }
   }
   
+  .card {
+    position: relative;
+    background: #333;
+    width: 49%;
+    height: 70vh;
+    border-radius: 12px;
+    padding: 2rem;
+    color: #aaa;
+    box-shadow: 8px 9px 4px #000000cf;
+    overflow: hidden;
+    display: inline-table;
+    animation: card 0.5s ease;
+  
+  }
+  
+  @keyframes card {
+    0% {
+      transform: translate(-0.5rem, -0.5rem) scale(0.5);
+      opacity: 0;
+      filter: blur(1px);
+    }
+    50% {
+      opacity: 1;
+      filter: blur(1px);
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+
   /* icon linkdin */
   .icon-item {
     list-style: none

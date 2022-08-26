@@ -25,6 +25,9 @@ body, html{
   .back{
     font-size: 14px;
   }
+  .check-list li{
+    font-size: 1rem;
+  }
 }
 @media (max-width: 500px) {
   a {
@@ -47,6 +50,16 @@ body, html{
   }
   .card{
     height: 67vh !important;
+  }
+  .buttns{
+    display: flex;
+    width: 100%;
+    flex-direction: column !important;
+    
+  }
+
+  .check-list li{
+    font-size: 1rem !important;
   }
 }
 
@@ -72,7 +85,7 @@ p {
 .card {
   position: relative;
   background: #333;
-  width: 49%;
+  width: 69%;
   height: 70vh;
   border-radius: 12px;
   padding: 2rem;
@@ -185,8 +198,81 @@ p {
 /* menus */
 .buttns{
   display: flex;
-    flex-direction: column;
+    width: 100%;
 }
+
+.dir{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  
+}
+
+.dirdentro{
+  display: flex;
+  width: 100%;
+  
+}
+
+.check-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.check-list li {
+  position: relative;
+  list-style-type: none;
+  padding-left: 1.5rem;
+  
+ 
+}
+
+.check-list1 li {
+  position: relative;
+  
+  margin-bottom: 0.6rem;
+
+}
+
+.check-list li:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 5px;
+    height: 11px;
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    border-color: #00a8a8;
+    transform-origin: bottom left;
+    transform: rotate(45deg);  
+}
+
+
+/* Boilerplate stuff */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+
+.esq{
+  display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.buttnsdir{
+  display: flex;
+    flex-direction: column;
+    width: 50%;
+    
+}
+
+
 
 .btna::before {  
   transform: scaleX(0);

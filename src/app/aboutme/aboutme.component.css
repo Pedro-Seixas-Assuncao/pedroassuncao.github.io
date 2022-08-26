@@ -19,8 +19,15 @@ body, html{
   }
 }
 @media (max-width: 1000px) {
+  .card{
+    width: 75% !important;
+    height: 19% !important;
+  }
   h4{
     font-size: 18px;
+  }
+  h5{
+    font-size: 16px;
   }
   .back{
     font-size: 14px;
@@ -28,15 +35,28 @@ body, html{
   .check-list li{
     font-size: 1rem;
   }
+  .buttns{
+    display: flex;
+    width: 100%;
+    flex-direction: column !important;
+    
+  }
 }
 @media (max-width: 500px) {
   a {
     font-size: 14px;
   }
   .card{
-    width: 75% !important;
+    width: 95% !important;
+    
+  }
+  h1{
+    font-size: 18px;
   }
   h4{
+    font-size: 14px;
+  }
+  h5{
     font-size: 14px;
   }
   .btna{
@@ -57,9 +77,12 @@ body, html{
     flex-direction: column !important;
     
   }
-
+  .check-list1 li{
+    font-size: 13px !important;
+    margin-bottom: 1px !important;
+  }
   .check-list li{
-    font-size: 1rem !important;
+    font-size: 13px !important;
   }
 }
 

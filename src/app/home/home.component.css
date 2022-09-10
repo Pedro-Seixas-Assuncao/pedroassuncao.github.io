@@ -24,7 +24,7 @@
       font-size: 14px;
     }
     .card{
-      width: 75% !important;
+     width: 85% !important;
     }
     p{
       font-size: 12px;
@@ -37,6 +37,9 @@
     }
     .card{
       height: 67vh !important;
+    }
+    h6{
+      font-size: 0.8rem !important;
     }
   }
   

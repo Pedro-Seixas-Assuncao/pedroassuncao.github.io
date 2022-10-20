@@ -27,13 +27,10 @@ body, html{
     width: 75% !important;
   }
   .btna{
-    font-size: 1rem !important;
+    font-size: 0.6rem !important;
   }
   p{
-    font-size: 12px;
-  }
-  .btna{
-    font-size: 1rem !important;
+    font-size: 10px;
   }
   .back{
     font-size: 0.8rem !important;
@@ -67,7 +64,7 @@ p {
   position: relative;
   background: #333;
   width: 38%;
-  height: 70vh;
+  height: 68vh;
   border-radius: 12px;
   padding: 2rem;
   color: #aaa;
@@ -231,7 +228,7 @@ p {
 .btna {
   color: white;
   text-transform: uppercase;
-  margin: 20px;
+  margin: 15px;
   padding: 4.5px;
   position: relative;
   font-size: 1.5rem;

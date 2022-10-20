@@ -30,16 +30,19 @@
       font-size: 12px;
     }
     .btna{
-      font-size: 1rem !important;
+      font-size: 0.6rem !important;
     }
     .svg{
       height: 1rem !important;
     }
     .card{
-      height: 67vh !important;
+      height: 59vh !important;
     }
     h6{
       font-size: 0.8rem !important;
+    }
+    h1{
+      font-size: 25px !important;
     }
   }
   

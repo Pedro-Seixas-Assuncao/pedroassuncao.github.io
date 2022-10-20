@@ -58,7 +58,7 @@ body, html{
     font-size: 13px;
   }
   h5{
-    font-size: 13px;
+    font-size: 12px;
   }
   .btna{
     font-size: 1rem !important;
@@ -79,11 +79,11 @@ body, html{
     
   }
   .check-list1 li{
-    font-size: 13px !important;
+    font-size: 11px !important;
     margin-bottom: 1px !important;
   }
   .check-list li{
-    font-size: 11px !important;
+    font-size: 10px !important;
   }
 
 }

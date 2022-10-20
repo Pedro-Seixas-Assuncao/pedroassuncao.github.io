@@ -50,7 +50,7 @@
     align-items: center;
     justify-content: center;
     height: 97.8vh;
-  
+    padding-bottom: 50px !important;
   }
   p {
     margin-top: 0;

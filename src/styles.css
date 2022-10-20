@@ -22,7 +22,13 @@
       background-position: 0% 50%;
     }
   }
-  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 97.8vh;
+    padding-bottom: 60px !important;
+  }
   .card {
     position: relative;
     background: #333;

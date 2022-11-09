@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="login.css">
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<title>Loja do Pedro</title>
+
+</head>
+
+<style>
+  img[alt="www.000webhost.com"]{display:none;}
+</style>
+<body>
+  
+<script>
+   
+</script>
+
+<div class="container">
+   <a href="index.html"><img class="logo" src="images/logo.jpg" alt="" > </a> <br>
+    <div class="card">
+        <div class="heading">
+            <h3>Login</h3><br><br>
+        </div>
+
+        <input type="text" id="email" name="email" placeholder="E-mail" />
+<br><br>
+        <input type="password" id="password" name="password" placeholder="Password" />
+        
+        <div class="button"> <button type="submit" value="" id="login" style="background-color: rgb(54, 150, 46); "> Login</button> </div>
+        <hr>
+        <div class="or">
+            <p>Or Sign In Using</p>
+        </div>
+        
+        <div class="button" style="text-align: center;"  id="signInWithGoogle"> <button style="width: 25px; background-color: transparent;"> <img width="25px" style="margin-top:7px; margin-right:8px" alt="Google sign-in" 
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" /></button> </div>
+
+    </div>
+    <br>
+    <div class="login">
+      <p>Don't Have Account? </p>
+      <div class="button"> <button type="submit" value="" id="register" style="background-color: rgb(54, 150, 46); "> Register</button> </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="/login.js"></script>
+</body>
+
+
+
+
+<script type="module">
+  
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://firebase.google.com/docs/web/learn-more#config-object
+
+
+
+  
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAAU2k_IX3DjOV6GPsXHZUw6VU_GGTzCeA",
+    authDomain: "pedromarket-154cc.firebaseapp.com",
+    databaseURL: "https://pedromarket-154cc-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "pedromarket-154cc",
+    storageBucket: "pedromarket-154cc.appspot.com",
+    messagingSenderId: "967282763908",
+    appId: "1:967282763908:web:ba9496cff7343c993c3ad1",
+    measurementId: "G-MD1HNHGN5K"
+  };
+
+  // Initialize Firebase
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+// Initialize Realtime Database and get a reference to the service
+const database = getDatabase(app);
+
+const provider = new GoogleAuthProvider();
+
+const analytics = getAnalytics(app);
+
+const auth = getAuth();
+
+signInWithGoogle.addEventListener('click',(e) => {
+
+
+// sign in with popup tab
+signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+
+    window.location.href = 'index.html';
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+
+    alert(errorMessage);
+  });
+ });
+
+
+register.addEventListener('click',(e)=>{
+    window.location.href = 'account.html';
+});
+
+login.addEventListener('click',(e)=>{
+   var email = document.getElementById('email').value;
+   var password = document.getElementById('password').value;
+
+      signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+
+         window.location.href = 'index.html';
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        alert(errorMessage);
+  });
+
+ });
+
+
+</script>
+
+</html>

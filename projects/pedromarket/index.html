@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="main.css">
+  
+  <link rel="preload" href="images/fuindo.jpg" as="image">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+
+<title>Loja do Pedro</title>
+
+</head>
+
+<style>
+  img[alt="www.000webhost.com"]{display:none;}
+</style>
+<body>
+  
+  <script>
+  
+  </script>
+
+
+<script>
+
+
+AOS.init();
+    
+
+function swapImages(){
+  $(".loader-wrapper").fadeOut("fast");
+  }
+
+  function ok(){
+   $(".showcase").fadeIn("fast");
+   $(".menu").fadeIn("fast");
+   $("#produtos").fadeIn("fast");
+  }  
+
+
+  function loadvisto(){
+    $(".loader-wrapper").fadeOut("fast");
+    $(".showcase").fadeIn("fast");
+    $(".menu").fadeIn("fast");
+    $("#produtos").fadeIn("fast");
+  }
+
+
+      if(localStorage.getItem("hasCodeRunBefore") === null) {
+    setInterval(swapImages,4000);
+  setInterval(ok,4150);
+        localStorage.setItem("hasCodeRunBefore", true);
+      }else{
+        setInterval(loadvisto,1);
+      }
+     
+
+      window.addEventListener("onunload", () => localStorage.removeItem('hasCodeRunBefore'));
+
+      window.onbeforeunload = function(e) {
+        e.returnValue = 'onbeforeunload';
+        deleterecords();
+    };
+     
+
+</script>
+
+
+
+<div class="loader-wrapper" >
+<div id="top">
+  <img data-aos="fade-down"
+  data-aos-easing="linear"
+  data-aos-duration="1500" src="images/imageinv.png" alt="" >
+</div>
+ 
+  
+  <span class="loader"><span class="loader-inner"></span></span>
+<br>
+  <section class="container">
+    <h1 class="title">
+      <span style="font-size: 0.3em;">You can’t buy happiness, </span>
+      <span style="font-size: 0.3em;">but you can buy Shoes</span>
+      <span style="font-size: 0.2em;">and that’s kind of the same thing</span>
+    </h1>
+  </section>
+
+</div>
+
+
+  <section class="showcase" style="display: none;">
+
+   
+
+    <header>
+      <div  class="mainbox" >
+        <div style="
+        display: flex;
+        align-items: center;
+        align-content: center;
+    ">
+      <img class="logo" src="images/logo.jpg" alt="" ></div>
+    </div>
+      <div class="toggle"></div>
+    </header>
+
+
+   
+      <div class="text" id="textos" style="text-align: center;">
+       <h2 class="titlemain" data-aos="fade-down">Sneakers Shop</h2>
+
+        <div class="carousel" style="margin-top: 14%;">
+          <ul class="carousel__list">
+            <li class="carousel__item" data-pos="-2">1</li>
+            <li class="carousel__item" data-pos="-1">2</li>
+            <li class="carousel__item" data-pos="0">3</li>
+            <li class="carousel__item" data-pos="1">4</li>
+            <li class="carousel__item" data-pos="2">5</li>
+          </ul>
+        </div>
+
+        <script>
+          const state = {};
+const carouselList = document.querySelector('.carousel__list');
+const carouselItems = document.querySelectorAll('.carousel__item');
+const elems = Array.from(carouselItems);
+
+carouselList.addEventListener('click', function (event) {
+  var newActive = event.target;
+  var isItem = newActive.closest('.carousel__item');
+
+  if (!isItem || newActive.classList.contains('carousel__item_active')) {
+    return;
+  };
+  
+  update(newActive);
+});
+
+const update = function(newActive) {
+  const newActivePos = newActive.dataset.pos;
+
+  const current = elems.find((elem) => elem.dataset.pos == 0);
+  const prev = elems.find((elem) => elem.dataset.pos == -1);
+  const next = elems.find((elem) => elem.dataset.pos == 1);
+  const first = elems.find((elem) => elem.dataset.pos == -2);
+  const last = elems.find((elem) => elem.dataset.pos == 2);
+  
+  current.classList.remove('carousel__item_active');
+  
+  [current, prev, next, first, last].forEach(item => {
+    var itemPos = item.dataset.pos;
+
+    item.dataset.pos = getPos(itemPos, newActivePos)
+  });
+};
+
+const getPos = function (current, active) {
+  const diff = current - active;
+
+  if (Math.abs(current - active) > 2) {
+    return -current
+  }
+
+  return diff;
+}
+        </script>
+
+<div style="    display: flex;
+text-align: center;
+z-index: 99999999999;
+margin-top: 17%;
+justify-content: space-around;
+align-items: center;">
+
+        <a class="last1" href="#produtos" >Explore</a> &nbsp; &nbsp; &nbsp; &nbsp; 
+        <a class="last2" href="#produtos" >About Us</a>
+      </div>
+      </div>
+ 
+    
+    <script>
+   
+    
+    </script>
+    <ul class="social">
+      <li style="width: 50px;"><a href="https://www.facebook.com"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+      <li><a href="https://www.twitter.com"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+      <li><a href="https://www.instagram.com"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+    </ul>
+  </section>
+  <div class="menu" style="display: none;">
+    <ul>
+      <li><a href="produtos_man.html">Man</a></li>
+      <li><a href="produtos_woman.html">Woman</a></li>
+      <li style="padding-bottom: 6px;"><a href="produtos.html">Products</a></li>
+      <li style="border-top: 2px dashed black; padding-top: 5px;" id="myH2"></li>
+    </ul>
+
+  </div>
+
+
+
+  <script src=
+  "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+      </script>
+       
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+
+
+
+  // Import the functions you need from the SDKs you need
+
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAAU2k_IX3DjOV6GPsXHZUw6VU_GGTzCeA",
+  authDomain: "pedromarket-154cc.firebaseapp.com",
+  databaseURL: "https://pedromarket-154cc-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "pedromarket-154cc",
+  storageBucket: "pedromarket-154cc.appspot.com",
+  messagingSenderId: "967282763908",
+  appId: "1:967282763908:web:ba9496cff7343c993c3ad1",
+  measurementId: "G-MD1HNHGN5K"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+const analytics = getAnalytics(app);
+
+const auth = getAuth();
+
+const provider = new GoogleAuthProvider();
+
+const user = auth.currentUser;
+
+const database = getDatabase(app);
+
+
+
+
+onAuthStateChanged(auth, (user) => {
+
+if (user) {
+// User is signed in, see docs for a list of available properties
+// https://firebase.google.com/docs/reference/js/firebase.User
+const uid = user.email;
+//bla bla bla
+const h2 = document.getElementById("myH2");
+
+if(user.email == "pedroseixasa@gmail.com")
+{
+  let html4 = "<li><a href='admin.html' target='_blank'>Admin</a></li>";
+  h2.insertAdjacentHTML("beforeend", html4);
+}
+
+let html3 = "<li><a href='cart.html'>Cart</a></li>";
+ let html1 = "<li><a href='profile.html'>Account</a></li>";
+  let html2 = "<li><a href='logout.html'>Logout</a></li>";
+
+  h2.insertAdjacentHTML("beforeend", html3);
+   h2.insertAdjacentHTML("beforeend", html1);
+   h2.insertAdjacentHTML("beforeend", html2);
+   
+
+console.log("user : " + uid);
+// ...
+} else {
+// User is signed out
+
+//bla bla bla
+
+const h2 = document.getElementById("myH2");
+ 
+ let html1 = "<li><a href='login.html'>Log In</a></li>";
+
+   h2.insertAdjacentHTML("beforeend", html1);
+
+}
+});
+function logoutt(){
+
+logout.addEventListener('click',(e)=>{
+
+signOut(auth).then(() => {
+ // Sign-out successful.
+ alert('user loged out');
+}).catch((error) => {
+ // An error happened.
+ const errorCode = error.code;
+ const errorMessage = error.message;
+
+    alert(errorMessage);
+});
+
+});
+
+}
+</script>
+
+  <section id="produtos" style="display: none;">
+
+   
+
+    <div class="produtosbox">
+      <h2 style="color: rgb(73, 73, 73) !important;
+      font-size: 5rem;
+      font-weight: 500;
+      text-shadow: -0.0075em 0.0075em 0 #838383, 0.005em 0.005em 0 #838383, 0.01em 0.01em 0 #838383, 0.015em 0.015em #838383, 0.02em 0.02em 0 #a8a8a8, 0.025em 0.025em 0 #adadad, 0.03em 0.03em 0 #b3b3b3, 0.035em 0.035em 0 #b8b8b8 !important;"data-aos="fade-down">Brands</h2><br><br>
+    <div class="galery">
+
+    <div class="image-container">
+
+<div  style="display: contents;">
+
+      <div class="text2">
+    <div data-aos="fade-right"
+    data-aos-offset="300"
+    data-aos-easing="ease-in-sine" 
+    class="image" style="border-radius: 8px;--clip-start: inset(100% 0 0 0); --clip-end: inset(0 0 0 0); box-shadow: rgb(50 50 93) 0px 2px 5px -1px, rgb(0 0 0) 0px 1px 6px -1px;" bis_skin_checked="1"><img src="images/adixadfixee.jpg"><img src="images/adidas.jpg"></div>
+    <a class="last2" href="produtos_adidas.html">Adidas</a>
+  </div>
+
+<div class="text2">
+    <div data-aos="fade-bottom"
+    data-aos-offset="300"
+    data-aos-easing="ease-in-sine" class="image" style="border-radius: 8px;--clip-start: inset(100% 0 0 0); --clip-end: inset(0 0 0 0); box-shadow: rgb(50 50 93) 0px 2px 5px -1px, rgb(0 0 0) 0px 1px 6px -1px;" bis_skin_checked="1"><img src="images/fixe.jpg"><img src="images/fixeee.jpg"></div>
+    <a class="last2" href="produtos_nike.html">Nike</a>
+  </div>
+ 
+  <div class="text2">
+    <div data-aos="fade-left"
+    data-aos-offset="200"
+    data-aos-easing="ease-in-sine" class="image" style="border-radius: 8px;--clip-start: inset(100% 0 0 0); --clip-end: inset(0 0 0 0); box-shadow: rgb(50 50 93) 0px 2px 5px -1px, rgb(0 0 0) 0px 1px 6px -1px;" bis_skin_checked="1"><img src="images/vans.jfif"><img src="images/vaaaaans.jpg"></div>
+   
+    <a class="last2" href="produtos_vans.html">Vans</a>
+  </div>
+ 
+</div>
+
+
+  </div>  
+
+
+    </div>
+
+    <br>
+
+<div class="frasebuye">
+
+    <h2 class="buy">Buy it, </h2>
+
+    <h2 id="market" data-aos="fade-right"
+    data-aos-offset="200"
+    data-aos-easing="ease-in-sine"><b> &nbspis the best on market </b></h2>
+    <br>
+
+  </div>
+
+  </div>
+
+
+  </section>
+
+
+
+<script type="text/javascript" src="script.js">
+ window.onbeforeunload = function (e) {
+    e = e || window.event;
+
+    // For IE and Firefox prior to version 4
+    if (e) {
+        e.returnValue = 'Sure?';
+    }
+
+    // For Safari
+    return 'Sure?';
+};
+</script>
+</body>
+
+</html>

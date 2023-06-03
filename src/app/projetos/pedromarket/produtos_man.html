@@ -1,0 +1,324 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="produtosnike.css">
+
+  <script type="text/javascript" src="produtos.js"></script>
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+<title>Loja do Pedro</title>
+
+</head>
+
+<style>
+  img[alt="www.000webhost.com"]{display:none;}
+</style>
+<body>
+  <script>
+
+  
+    AOS.init();
+  
+  </script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+  import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+  
+  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+  
+  import { getFirestore, doc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+  
+  
+  // Import the functions you need from the SDKs you need
+  
+  
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+  
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+  apiKey: "AIzaSyAAU2k_IX3DjOV6GPsXHZUw6VU_GGTzCeA",
+  authDomain: "pedromarket-154cc.firebaseapp.com",
+  databaseURL: "https://pedromarket-154cc-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "pedromarket-154cc",
+  storageBucket: "pedromarket-154cc.appspot.com",
+  messagingSenderId: "967282763908",
+  appId: "1:967282763908:web:ba9496cff7343c993c3ad1",
+  measurementId: "G-MD1HNHGN5K"
+  };
+  
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  const analytics = getAnalytics(app);
+  
+  const auth = getAuth();
+  
+  const provider = new GoogleAuthProvider();
+  
+  const user = auth.currentUser;
+
+  const db = getFirestore();
+
+  const colRef = collection(db, 'pisos');
+
+  getDocs(colRef)
+    .then((snapshot) => {
+
+        let pisos = [];
+        snapshot.docs.forEach((doc) =>{
+          pisos.push({...doc.data(), id: doc.id})
+
+     
+        } )
+        var dynamic = document.querySelector('.container');
+    
+
+     
+    for (var i = 0; i < pisos.length ; i++)
+    {
+      if(pisos[i].genero == "Man")
+    {
+      dynamic.innerHTML +=`<div class="card" data-aos="fade-down"  style="     margin-bottom: 30px; box-shadow: rgb(50 50 93) 0px 2px 5px -1px, rgb(0 0 0) 0px 1px 6px -1px;">
+      <div class="imgBx">
+        <img src="` + pisos[i].path + `">
+      </div>
+      <div class="contentBx">
+        <h2>` + pisos[i].nome + `</h2><br>
+        <div class="size">
+          <h3>Size : ` + pisos[i].Tamanho + `</h3>
+ 
+        </div>
+        <br>
+        <a href="#">` + pisos[i].Preço + ` €</a>
+      </div>
+    </div> `
+    }
+  }   
+    })
+    .catch(err=> {
+      console.log(err.message)
+    })
+
+    
+
+    </script>
+
+  <!-- ===== NAV ===== -->
+  <div class="page">
+   <a href="index.html"> <img data-aos="fade-down-right" src="images/logo.jpg" alt="" style=" height: auto;"> </a>
+
+    <nav class="page__menu menu" data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="500">
+        
+      <ul class="menu__list r-list">
+
+        <li class="menu__group"><a href="index.html" class="menu__link r-link text-underlined"><i class="fa-solid fa-house"></i></a></li> 
+        
+        <li class="menu__group"><a href="produtos_nike.html" class="menu__link r-link text-underlined">NIKE</a></li>
+        
+        <li class="menu__group"><a href="produtos_adidas.html" class="menu__link r-link text-underlined">ADIDAS</a></li>
+
+        <li class="menu__group"><a href="produtos_vans.html" class="menu__link r-link text-underlined">VANS</a></li>
+
+        <li class="menu__group"><a href="profile.html" class="menu__link r-link text-underlined"><i class="fa-solid fa-user"></i></a></li>
+        
+        <li class="menu__group"><a href="#0" class="menu__link r-link text-underlined"><i class="fa-solid fa-cart-shopping"></i></a></li>
+      </ul>
+    </nav>
+    <img src="images/logo.jpg" alt="" id="ivi">
+   
+  </div>
+
+  
+  <div class="container">
+
+
+
+    
+
+
+
+
+    
+  </div>
+
+
+
+</body>
+
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="produtosnike.css">
+
+  <script type="text/javascript" src="produtos.js"></script>
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+<title>Loja do Pedro</title>
+
+</head>
+
+<style>
+  img[alt="www.000webhost.com"]{display:none;}
+</style>
+<body>
+  <script>
+
+  
+    AOS.init();
+  
+  </script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+  import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+  
+  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+  
+  import { getFirestore, doc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+  
+  
+  // Import the functions you need from the SDKs you need
+  
+  
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+  
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+  apiKey: "AIzaSyAAU2k_IX3DjOV6GPsXHZUw6VU_GGTzCeA",
+  authDomain: "pedromarket-154cc.firebaseapp.com",
+  databaseURL: "https://pedromarket-154cc-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "pedromarket-154cc",
+  storageBucket: "pedromarket-154cc.appspot.com",
+  messagingSenderId: "967282763908",
+  appId: "1:967282763908:web:ba9496cff7343c993c3ad1",
+  measurementId: "G-MD1HNHGN5K"
+  };
+  
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  const analytics = getAnalytics(app);
+  
+  const auth = getAuth();
+  
+  const provider = new GoogleAuthProvider();
+  
+  const user = auth.currentUser;
+
+  const db = getFirestore();
+
+  const colRef = collection(db, 'pisos');
+
+  getDocs(colRef)
+    .then((snapshot) => {
+
+        let pisos = [];
+        snapshot.docs.forEach((doc) =>{
+          pisos.push({...doc.data(), id: doc.id})
+
+     
+        } )
+        var dynamic = document.querySelector('.container');
+    
+
+     
+    for (var i = 0; i < pisos.length ; i++)
+    {
+      if(pisos[i].genero == "Man")
+    {
+      dynamic.innerHTML +=`<div class="card" data-aos="fade-down"  style="     margin-bottom: 30px; box-shadow: rgb(50 50 93) 0px 2px 5px -1px, rgb(0 0 0) 0px 1px 6px -1px;">
+      <div class="imgBx">
+        <img src="` + pisos[i].path + `">
+      </div>
+      <div class="contentBx">
+        <h2>` + pisos[i].nome + `</h2><br>
+        <div class="size">
+          <h3>Size : ` + pisos[i].Tamanho + `</h3>
+ 
+        </div>
+        <br>
+        <a href="#">` + pisos[i].Preço + ` €</a>
+      </div>
+    </div> `
+    }
+  }   
+    })
+    .catch(err=> {
+      console.log(err.message)
+    })
+
+    
+
+    </script>
+
+  <!-- ===== NAV ===== -->
+  <div class="page">
+   <a href="index.html"> <img data-aos="fade-down-right" src="images/logo.jpg" alt="" style=" height: auto;"> </a>
+
+    <nav class="page__menu menu" data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="500">
+        
+      <ul class="menu__list r-list">
+
+        <li class="menu__group"><a href="index.html" class="menu__link r-link text-underlined"><i class="fa-solid fa-house"></i></a></li> 
+        
+        <li class="menu__group"><a href="produtos_nike.html" class="menu__link r-link text-underlined">NIKE</a></li>
+        
+        <li class="menu__group"><a href="produtos_adidas.html" class="menu__link r-link text-underlined">ADIDAS</a></li>
+
+        <li class="menu__group"><a href="produtos_vans.html" class="menu__link r-link text-underlined">VANS</a></li>
+
+        <li class="menu__group"><a href="profile.html" class="menu__link r-link text-underlined"><i class="fa-solid fa-user"></i></a></li>
+        
+        <li class="menu__group"><a href="#0" class="menu__link r-link text-underlined"><i class="fa-solid fa-cart-shopping"></i></a></li>
+      </ul>
+    </nav>
+    <img src="images/logo.jpg" alt="" id="ivi">
+   
+  </div>
+
+  
+  <div class="container">
+
+
+
+    
+
+
+
+
+    
+  </div>
+
+
+
+</body>
+
+>>>>>>> 00a0f5ebe1c4f6f42527d5c29717d777eb998491
+</html>

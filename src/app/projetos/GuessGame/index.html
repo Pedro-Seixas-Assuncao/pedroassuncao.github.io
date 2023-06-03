@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" 
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Guess My Number</title>
+  </head>
+  <style>
+    img[alt="www.000webhost.com"]{display:none;}
+  </style>
+  <body  onload="myFunction()">  
+    <script>
+    function myFunction() {
+    
+             document.getElementsByClassName('disclaimer')[0].style.visibility = 'hidden'; 
+    }
+</script>
+    <header>
+      <h1>Guess My Number</h1>
+      <p class="between">(Entre 1 e 20)</p>
+      <button class="btn again">Recomeçar!</button>
+      <div class="number">?</div>
+      <button class="btn novojogo">Novo Jogo</button>
+      <div class="highscoree">
+        <p class="label-highscore">
+          🥇 Pontuação Máxima: <span class="highscore">0</span>
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="left">
+        <input type="number" class="guess" />
+        <button class="btn check">Verificar!</button>
+      </section>
+      <section class="right">
+        <p class="message">Começe a adivinhar...</p>
+        <p class="label-score">💯 Pontuação: <span class="score">20</span></p>
+        
+      </section>
+      
+    </main>
+      <div style="margin-bottom: 5%;text-align: center;">
+      <p>Criado por Pedro Assunção.</p>
+      
+      </div>
+    <script src="script.js"></script>
+  </body>
+  
+</html>

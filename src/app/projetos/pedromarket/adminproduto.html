@@ -1,0 +1,408 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="adminproduto.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<title>Loja do Pedro</title>
+
+</head>
+
+<style>
+  img[alt="www.000webhost.com"]{display:none;}
+</style>
+<body>
+  
+<script>
+
+  
+  AOS.init();
+
+</script>
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+
+
+  <script type="module">
+
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+  import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+  
+  import { getDatabase, ref, set, onValue, child, get } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+  
+  import { getFirestore, doc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+  
+  const firebaseConfig = {
+  apiKey: "AIzaSyAAU2k_IX3DjOV6GPsXHZUw6VU_GGTzCeA",
+  authDomain: "pedromarket-154cc.firebaseapp.com",
+  databaseURL: "https://pedromarket-154cc-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "pedromarket-154cc",
+  storageBucket: "pedromarket-154cc.appspot.com",
+  messagingSenderId: "967282763908",
+  appId: "1:967282763908:web:ba9496cff7343c993c3ad1",
+  measurementId: "G-MD1HNHGN5K"
+  };
+  
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  const analytics = getAnalytics(app);
+  
+  const auth = getAuth();
+  
+  const provider = new GoogleAuthProvider();
+  
+  const user = auth.currentUser;
+
+  const db = getFirestore();
+
+  const colRef = collection(db, 'pisos');
+
+  getDocs(colRef)
+    .then((snapshot) => {
+
+        let pisos = [];
+        snapshot.docs.forEach((doc) =>{
+          pisos.push({...doc.data(), id: doc.id})
+
+     
+        } )
+        var dynamic = document.querySelector('.ok');
+          
+    for (var i = 0; i < pisos.length ; i++)
+    {
+   
+      dynamic.innerHTML += `
+     
+       
+          <tr>
+            <td style="width: 200px;">` + pisos[i].nome + `</td>
+            <td>` + pisos[i].Marca + `</td>
+            <td>` + pisos[i].genero + `</td>
+            <td>` + pisos[i].CorPredominante + `</td>
+            <td>` + pisos[i].Preço + `€</td>
+            <td>` + pisos[i].Tamanho + `</td>
+            <td>` + pisos[i].path + `</td>
+            <td> <a href=""><span style='font-size:30px;'> &#9997; </span></a> </td>
+            <td> <a href=""> <span style='font-size:30px;'>&#10060;</span> </a> </td>
+          </tr>
+        
+      `
+    }
+    })
+    .catch(err=> {
+      console.log(err.message)
+    })
+
+    
+
+</script>
+
+
+	
+	<div id="mySidenav" class="sidenav">
+	<p class="logo"><span>PM</span>-PedroMarket</p>
+  <a href="admin.html" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
+  <a href="#"class="icon-a"><i class="fa fa-users icons"></i> &nbsp;&nbsp;Customers</a>
+  <a href="#"class="icon-a"><i class="fa fa-shopping-bag icons"></i> &nbsp;&nbsp;Orders</a>
+  <a href="#"class="icon-a"><i class="fa fa-user icons"></i> &nbsp;&nbsp;Accounts</a>
+  <a href="adminproduto.html"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Products</a>
+
+
+</div>
+<div id="main">
+
+	<div class="head">
+	
+<span style="font-size:30px;cursor:pointer; color: white;" class="nav"  >&#9776; Products</span>
+<span style="font-size:30px;cursor:pointer; color: white;" class="nav2"  >&#9776; Products</span>
+
+	<div class="clearfix"></div>
+</div>
+
+	<div class="clearfix"></div>
+	<br/>
+	
+    <div style=" display: flex; flex-direction: row; justify-content: center;">
+
+	<div class="col-div-6">
+		<div class="box">
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" style="width: 40%;">Name</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Color</th>
+            <th scope="col">Price</th>
+            <th scope="col">Sizes</th>
+            <th scope="col">Path</th>
+          </tr>
+        </thead>
+        <tbody class="ok">
+
+
+      </tbody>
+    </table>
+
+      <a href="adicionarproduto.html" style="float: right; margin-top: 6px;">Adicionar Produto</a>&nbsp &nbsp
+		</div>
+	</div>
+	
+</div>
+
+	<div class="clearfix"></div>
+	<br/><br/>
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+  $(".nav").click(function(){
+    $("#mySidenav").css('width','70px');
+    $("#main").css('margin-left','70px');
+    $(".logo").css('visibility', 'hidden');
+    $(".logo span").css('visibility', 'visible');
+     $(".logo span").css('margin-left', '-10px');
+     $(".icon-a").css('visibility', 'hidden');
+     $(".icons").css('visibility', 'visible');
+     $(".icons").css('margin-left', '-8px');
+      $(".nav").css('display','none');
+      $(".nav2").css('display','block');
+  });
+
+$(".nav2").click(function(){
+    $("#mySidenav").css('width','300px');
+    $("#main").css('margin-left','300px');
+    $(".logo").css('visibility', 'visible');
+     $(".icon-a").css('visibility', 'visible');
+     $(".icons").css('visibility', 'visible');
+     $(".nav").css('display','block');
+      $(".nav2").css('display','none');
+ });
+
+</script>
+</body>
+
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="adminproduto.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<title>Loja do Pedro</title>
+
+</head>
+
+<style>
+  img[alt="www.000webhost.com"]{display:none;}
+</style>
+<body>
+  
+<script>
+
+  
+  AOS.init();
+
+</script>
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+
+
+  <script type="module">
+
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+  import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+  
+  import { getDatabase, ref, set, onValue, child, get } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+  
+  import { getFirestore, doc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+  
+  const firebaseConfig = {
+  apiKey: "AIzaSyAAU2k_IX3DjOV6GPsXHZUw6VU_GGTzCeA",
+  authDomain: "pedromarket-154cc.firebaseapp.com",
+  databaseURL: "https://pedromarket-154cc-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "pedromarket-154cc",
+  storageBucket: "pedromarket-154cc.appspot.com",
+  messagingSenderId: "967282763908",
+  appId: "1:967282763908:web:ba9496cff7343c993c3ad1",
+  measurementId: "G-MD1HNHGN5K"
+  };
+  
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  const analytics = getAnalytics(app);
+  
+  const auth = getAuth();
+  
+  const provider = new GoogleAuthProvider();
+  
+  const user = auth.currentUser;
+
+  const db = getFirestore();
+
+  const colRef = collection(db, 'pisos');
+
+  getDocs(colRef)
+    .then((snapshot) => {
+
+        let pisos = [];
+        snapshot.docs.forEach((doc) =>{
+          pisos.push({...doc.data(), id: doc.id})
+
+     
+        } )
+        var dynamic = document.querySelector('.ok');
+          
+    for (var i = 0; i < pisos.length ; i++)
+    {
+   
+      dynamic.innerHTML += `
+     
+       
+          <tr>
+            <td style="width: 200px;">` + pisos[i].nome + `</td>
+            <td>` + pisos[i].Marca + `</td>
+            <td>` + pisos[i].genero + `</td>
+            <td>` + pisos[i].CorPredominante + `</td>
+            <td>` + pisos[i].Preço + `€</td>
+            <td>` + pisos[i].Tamanho + `</td>
+            <td>` + pisos[i].path + `</td>
+            <td> <a href=""><span style='font-size:30px;'> &#9997; </span></a> </td>
+            <td> <a href=""> <span style='font-size:30px;'>&#10060;</span> </a> </td>
+          </tr>
+        
+      `
+    }
+    })
+    .catch(err=> {
+      console.log(err.message)
+    })
+
+    
+
+</script>
+
+
+	
+	<div id="mySidenav" class="sidenav">
+	<p class="logo"><span>PM</span>-PedroMarket</p>
+  <a href="admin.html" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
+  <a href="#"class="icon-a"><i class="fa fa-users icons"></i> &nbsp;&nbsp;Customers</a>
+  <a href="#"class="icon-a"><i class="fa fa-shopping-bag icons"></i> &nbsp;&nbsp;Orders</a>
+  <a href="#"class="icon-a"><i class="fa fa-user icons"></i> &nbsp;&nbsp;Accounts</a>
+  <a href="adminproduto.html"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Products</a>
+
+
+</div>
+<div id="main">
+
+	<div class="head">
+	
+<span style="font-size:30px;cursor:pointer; color: white;" class="nav"  >&#9776; Products</span>
+<span style="font-size:30px;cursor:pointer; color: white;" class="nav2"  >&#9776; Products</span>
+
+	<div class="clearfix"></div>
+</div>
+
+	<div class="clearfix"></div>
+	<br/>
+	
+    <div style=" display: flex; flex-direction: row; justify-content: center;">
+
+	<div class="col-div-6">
+		<div class="box">
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" style="width: 40%;">Name</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Color</th>
+            <th scope="col">Price</th>
+            <th scope="col">Sizes</th>
+            <th scope="col">Path</th>
+          </tr>
+        </thead>
+        <tbody class="ok">
+
+
+      </tbody>
+    </table>
+
+      <a href="adicionarproduto.html" style="float: right; margin-top: 6px;">Adicionar Produto</a>&nbsp &nbsp
+		</div>
+	</div>
+	
+</div>
+
+	<div class="clearfix"></div>
+	<br/><br/>
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+  $(".nav").click(function(){
+    $("#mySidenav").css('width','70px');
+    $("#main").css('margin-left','70px');
+    $(".logo").css('visibility', 'hidden');
+    $(".logo span").css('visibility', 'visible');
+     $(".logo span").css('margin-left', '-10px');
+     $(".icon-a").css('visibility', 'hidden');
+     $(".icons").css('visibility', 'visible');
+     $(".icons").css('margin-left', '-8px');
+      $(".nav").css('display','none');
+      $(".nav2").css('display','block');
+  });
+
+$(".nav2").click(function(){
+    $("#mySidenav").css('width','300px');
+    $("#main").css('margin-left','300px');
+    $(".logo").css('visibility', 'visible');
+     $(".icon-a").css('visibility', 'visible');
+     $(".icons").css('visibility', 'visible');
+     $(".nav").css('display','block');
+      $(".nav2").css('display','none');
+ });
+
+</script>
+</body>
+
+>>>>>>> 00a0f5ebe1c4f6f42527d5c29717d777eb998491
+</html>

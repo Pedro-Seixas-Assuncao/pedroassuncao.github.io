@@ -103,7 +103,11 @@ h1{
   }
   .card{
     padding: 1.5rem !important;
-    margin-bottom: -5rem;
+    margin-bottom: -3rem;
+  }
+  .check-list1 li{
+    font-size: 11px !important;
+    margin-bottom: 1px !important;
   }
 }
 
@@ -114,13 +118,14 @@ h1{
       font-size: 0.4rem !important;
     }
     .check-list1 li{
-      font-size: 7% !important;
+      font-size: 9px !important;
       margin-bottom: 1px !important;
     }
     .card{
       padding: 1.2rem !important;
       margin-bottom: -5rem;
     }
+
     h5{
       font-size: 9px !important;
     }
@@ -194,10 +199,7 @@ h1{
     align-items: center !important;
     
   }
-  .check-list1 li{
-    font-size: 11px !important;
-    margin-bottom: 1px !important;
-  }
+
   .check-list li{
     font-size: 10px !important;
   }

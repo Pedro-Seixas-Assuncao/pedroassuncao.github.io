@@ -36,7 +36,8 @@ body, html{
 @media (max-width: 415px) and (max-height: 897px) {
   .card{
     width: 90% !important;
-    margin-bottom: -5rem  !important;
+      margin-bottom: -3rem;
+  
 
   }
   .card__image-container{
@@ -46,6 +47,10 @@ body, html{
 
 /* IPHONE 8 */
 @media (max-width: 376px) and (max-height: 668px){
+  .card{
+
+    margin-bottom: -3rem;
+  }
 
 }
 

@@ -19,12 +19,31 @@
   
     }
   }
+
+  /* IPHONE 8 */
+  @media (max-width: 376px) and (max-height: 668px){
+    .container{
+      align-items: flex-end !important;
+    }
+  }
+
+/* IHONE XS, X */
+@media (max-width: 376px) and (max-height: 812px) {
+ 
+  .card{
+    height: 50vh !important;
+  }
+}
+
   @media (max-width: 500px) {
-    a {
-      font-size: 14px;
+ 
+    .card__image-container{
+      margin: -2rem -2rem -4rem -2rem !important;
     }
     .card{
      width: 85% !important;
+     height: 35% !important;
+    
     }
     p{
       font-size: 12px;
@@ -35,9 +54,7 @@
     .svg{
       height: 1rem !important;
     }
-    .card{
-      height: 59vh !important;
-    }
+ 
     h6{
       font-size: 0.8rem !important;
     }

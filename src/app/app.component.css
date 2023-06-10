@@ -9,16 +9,56 @@
     background: linear-gradient(#e66465, #9198e5);
   }
   
-  @media (max-width: 1600px) {
-    a {
-   
-    }
-  }
-  @media (max-width: 1000px) {
-    a {
   
-    }
+/* IHONE XS, X */
+@media (max-width: 376px) and (max-height: 812px) {
+  .back
+  {
+    font-size: 0.4rem !important;
   }
+
+
+}
+
+/* IHONE XR, XS MAX */
+@media (max-width: 415px) and (max-height: 897px) {
+
+h5{
+  font-size: 11px !important;
+}
+
+}
+
+/* IHPONE 8, 7, 6s plus */
+@media (max-width: 415px) and (max-height: 897px) {
+
+h5{
+  font-size: 11px !important;
+}
+
+h1{
+  font-size: 12px !important;
+}
+
+}
+
+/* IPHONE 8 */
+@media (max-width: 376px) and (max-height: 668px){
+.back
+  {
+    font-size: 0.4rem !important;
+  }
+
+
+  h5{
+    font-size: 9px !important;
+  }
+
+  h1{
+    font-size: 10px !important;
+  }
+}
+
   @media (max-width: 500px) {
     a {
       font-size: 14px;

@@ -20,8 +20,10 @@
     </script>
  <div style="padding-top: 3%;text-align: center;color: #fff;font-size: medium;">
 
-  <h1>PIG GAME</h1>
-  <br>
+  <h1 class="gametitle">PIG GAME</h1>
+  
+  <br><br><br>
+  <button class="btn btn--rules">📜 Rules</button>
 </div>
 
     <main>
@@ -45,15 +47,31 @@
       </section>
 
       <img src="dice-5.png" alt="Playing dice" class="dice" />
+      
       <button class="btn btn--new">🔄 New game</button>
       <button class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
-    </main>
 
+
+     
+    </main>
+    <div id="rulesModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Pig Game Rules</h2>
+        <ol>
+          <li>This game needs two players.</li>
+          <li>The objective is to be the first player to reach or exceed 100 points.</li>
+          <li>If the players take turns rolling a six-sided they die.</li>
+          <li>If a player takes a "1", all points accumulated during that round are lost.</li>
+          <li>After each roll, the players have the option to stop and keep the points accumulated so far.</li>
+        </ol>
+      </div>
+    </div>
    
     <div style="padding-top: 3%;text-align: center;color: #fff;font-size: medium;">
 
-      <p>criado por pedro assuncao</p><p>
+      <p>by pedro assuncao</p><p>
 
     </p></div>
  

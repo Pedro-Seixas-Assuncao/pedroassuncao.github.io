@@ -9,7 +9,7 @@
 html {
   font-size: 60%;
   box-sizing: border-box;
-  overflow: hidden;
+
 }
 
 body {
@@ -247,7 +247,6 @@ h1 {
   }
 
   main {
-    height: 40vh;
     color: #eee;
     
     align-items: center;

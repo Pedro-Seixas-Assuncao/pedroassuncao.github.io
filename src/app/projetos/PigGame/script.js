@@ -169,28 +169,4 @@ hold.addEventListener('click', function(){
 
 })
 
-// Get the modal element
-var modal = document.getElementById("rulesModal");
 
-// Get the button that opens the modal
-var btn = document.getElementsByClassName("btn--rules")[0];
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// Open the modal when the button is clicked
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// Close the modal when the <span> (x) is clicked
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// Close the modal when clicking outside the modal
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
